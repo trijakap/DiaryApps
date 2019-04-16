@@ -82,6 +82,8 @@ public class ListNotesActivity extends AppCompatActivity {
         // untuk date gunakan Tools.getCurrentDateISO8601()
 
         mLists.add(new ListNotesModel("123", "https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg", "pantai", "12 Januari 2019"));
+        mLists.add(new ListNotesModel("124", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PIAYNEMO.jpg/220px-PIAYNEMO.jpg", "Raja Ampat", "20 Februari 2019"));
+        mLists.add(new ListNotesModel("125", "https://www.bruisedpassports.com/wp-content/uploads/2018/02/Switzerland-road-trip-itinerary-2-1024x684.jpg", "The Cambrian Adelboden Valley", "30 Maret 2019"));
 
         mAdapter.notifyDataSetChanged();
     }

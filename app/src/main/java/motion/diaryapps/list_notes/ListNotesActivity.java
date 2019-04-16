@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,10 @@ public class ListNotesActivity extends AppCompatActivity {
         initToolbar();
 
         // TODO: 4/12/19 panggil initRecyclerView() disini
+        initRecyclerView();
 
         // TODO: 4/12/19 panggil initDummy() disini
+        initDummy();
     }
 
     /**
@@ -57,13 +60,13 @@ public class ListNotesActivity extends AppCompatActivity {
     public void initRecyclerView() {
         // TODO: 4/12/19 -> ganti null dengan component RecyclerView pada activity_list_notes
         // hint: gunakan findViewById(R.id.xxxxx);
-        mRecyclerView = null;
+        mRecyclerView = findViewById(R.id.rvListNotes);
 
         // TODO: 4/12/19 -> ganti null dengan objek ListNotesAdapter
-        mAdapter = null;
+        mAdapter = new ListNotesAdapter(mLists,this);
 
         // TODO: 4/12/19 -> ganti null dengan objek LinearLayoutManager
-        mLayoutManager = null;
+        mLayoutManager = new LinearLayoutManager(this, LinearLayout.VERTICAL,false);
 
 
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -78,7 +81,7 @@ public class ListNotesActivity extends AppCompatActivity {
         // hint: lakukan setelah menambahkan constructor pada ListNotesModel
         // untuk date gunakan Tools.getCurrentDateISO8601()
 
-        mLists.add(new ListNotesModel());
+        mLists.add(new ListNotesModel("123", "https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg", "pantai", "12 Januari 2019"));
 
         mAdapter.notifyDataSetChanged();
     }
